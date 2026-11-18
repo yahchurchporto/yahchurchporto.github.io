@@ -80,3 +80,29 @@ footer a { text-decoration: none; border-bottom: 1px solid var(--linha); align-s
 .passos li + li { margin-top: 2px; }
 .nota { font-size: .84rem; color: var(--suave); text-align: center; margin: 0; }
 .nota a { color: var(--branco); }
+
+/* atalho "Não tem MB WAY?" pra quem não percebe que a página continua */
+html { scroll-behavior: smooth; }
+.mais {
+  display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none; text-align: center;
+  font-size: .9rem; color: var(--suave); padding: 4px 0 2px;
+}
+.mais b { color: var(--branco); font-weight: 600; display: block; }
+.mais svg { width: 26px; height: 26px; color: var(--teal-claro); animation: desce 1.6s ease-in-out infinite; }
+@keyframes desce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .mais svg { animation: none; } }
+#transferencia { scroll-margin-top: 16px; }
+.opcoes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: -8px; }
+.opcoes a {
+  display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 8px 10px;
+  border: 1px solid var(--linha); border-radius: 999px; text-decoration: none; font-size: .86rem; font-weight: 600;
+}
+.opcoes a:first-child { background: var(--teal); border-color: var(--teal); }
+.opcoes a svg { width: 16px; height: 16px; color: var(--teal-claro); }
+#mbway { scroll-margin-top: 16px; }
+.pag-ofertas main { padding-top: 22px; gap: 18px; }
+.pag-ofertas .titulo { gap: 6px; }
+.pag-ofertas .titulo h1 { font-size: clamp(2.6rem, 13vw, 3.6rem); }
+.pag-ofertas .cartao { gap: 10px; padding: 16px 18px; }
+.pag-ofertas .opcoes { margin-top: 0; }
+.nw { white-space: nowrap; font-weight: 600; color: var(--branco); }
