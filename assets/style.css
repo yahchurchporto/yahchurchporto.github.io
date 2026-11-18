@@ -1,0 +1,82 @@
+/* YAH Church Porto: página de links e de ofertas. Identidade do kit 2026: carvão, branco e teal só como destaque. */
+:root {
+  --carvao: #23282B;
+  --carvao-2: #2C3236;
+  --linha: rgba(255, 255, 255, .16);
+  --branco: #FFFFFF;
+  --suave: rgba(255, 255, 255, .72);
+  --teal: #00898B;
+  --teal-claro: #19A5A7;
+  --sans: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --display: 'Anton', 'Impact', sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; min-height: 100vh; background: var(--carvao); color: var(--branco);
+  font-family: var(--sans); font-size: 16px; line-height: 1.5;
+}
+main {
+  width: 100%; max-width: 480px; margin: 0 auto;
+  padding: 48px max(20px, env(safe-area-inset-right)) 40px max(20px, env(safe-area-inset-left));
+  display: flex; flex-direction: column; gap: 28px;
+}
+a { color: inherit; }
+
+/* cabeçalho */
+.marca { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.marca img { width: 230px; height: auto; display: block; }
+.frase { font-family: var(--serif); font-style: italic; font-size: 1.45rem; line-height: 1.2; margin: 0; color: var(--branco); text-wrap: balance; }
+.frase em { color: var(--teal-claro); font-style: italic; }
+
+/* botões de link */
+.links { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.botao {
+  display: flex; align-items: center; gap: 14px; min-height: 58px; padding: 12px 18px;
+  border: 1px solid var(--linha); border-radius: 14px; background: var(--carvao-2);
+  text-decoration: none; font-weight: 600; font-size: .98rem; letter-spacing: .01em;
+  transition: border-color .15s, background .15s, transform .15s;
+}
+.botao:hover, .botao:focus-visible { border-color: var(--teal-claro); background: #313840; }
+.botao:active { transform: scale(.985); }
+.botao svg { width: 22px; height: 22px; flex: none; }
+.botao span { flex: 1; }
+.botao .seta { width: 16px; height: 16px; opacity: .55; }
+.botao.destaque { background: var(--teal); border-color: var(--teal); }
+.botao.destaque:hover, .botao.destaque:focus-visible { background: var(--teal-claro); border-color: var(--teal-claro); }
+:focus-visible { outline: 2px solid var(--teal-claro); outline-offset: 3px; }
+
+/* rodapé */
+footer { text-align: center; font-size: .8rem; color: var(--suave); display: flex; flex-direction: column; gap: 4px; padding-top: 8px; }
+footer .sep { color: var(--teal-claro); }
+footer a { text-decoration: none; border-bottom: 1px solid var(--linha); align-self: center; }
+
+/* página de ofertas */
+.voltar { display: inline-flex; align-items: center; gap: 8px; font-size: .85rem; color: var(--suave); text-decoration: none; align-self: flex-start; }
+.voltar svg { width: 16px; height: 16px; }
+.titulo { text-align: center; display: flex; flex-direction: column; gap: 10px; }
+.titulo h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2.9rem, 15vw, 4rem); line-height: .92; letter-spacing: .01em; margin: 0; text-transform: uppercase; }
+.titulo h1 b { color: var(--teal-claro); font-weight: 400; }
+.titulo .frase { font-size: 1.35rem; }
+.ref { font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; color: var(--suave); }
+
+.cartao { border: 1px solid var(--linha); border-radius: 16px; background: var(--carvao-2); padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.cartao h2 { margin: 0; font-size: .78rem; letter-spacing: .24em; text-transform: uppercase; color: var(--teal-claro); font-weight: 600; }
+.dado { display: flex; flex-direction: column; gap: 2px; }
+.dado small { font-size: .74rem; color: var(--suave); letter-spacing: .04em; }
+.dado strong { font-size: 1.05rem; font-weight: 600; word-break: break-word; }
+.dado .grande { font-size: 1.5rem; letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.dado .iban { white-space: nowrap; font-size: clamp(.78rem, 3.7vw, 1.08rem); letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.copiar {
+  appearance: none; border: 0; border-radius: 12px; min-height: 50px; padding: 12px 18px; width: 100%;
+  background: var(--teal); color: var(--branco); font: 600 .95rem var(--sans); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 10px; transition: background .15s;
+}
+.copiar:hover, .copiar:focus-visible { background: var(--teal-claro); }
+.copiar svg { width: 18px; height: 18px; }
+.copiar.ok { background: var(--branco); color: var(--carvao); }
+.passos { margin: 0; padding-left: 1.2em; font-size: .86rem; color: var(--suave); }
+.passos li + li { margin-top: 2px; }
+.nota { font-size: .84rem; color: var(--suave); text-align: center; margin: 0; }
+.nota a { color: var(--branco); }
