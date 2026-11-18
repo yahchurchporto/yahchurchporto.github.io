@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dízimos e Ofertas · YAH Church Porto</title>
+<meta name="description" content="Contribua com a YAH Church Porto por transferência bancária ou MB WAY.">
+<meta name="theme-color" content="#23282B">
+<meta property="og:title" content="Dízimos e Ofertas · YAH Church Porto">
+<meta property="og:description" content="Deus ama quem dá com alegria. (2 Coríntios 9:7)">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@1&family=Montserrat:wght@400;600&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+  <a class="voltar" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>YAH Church Porto</a>
+
+  <header class="titulo">
+    <h1>Dízimos<br><b>e Ofertas</b></h1>
+    <p class="frase">“Deus ama quem dá com alegria.”</p>
+    <span class="ref">2 Coríntios 9:7</span>
+  </header>
+
+  <!-- MB WAY: entra aqui quando o número for confirmado -->
+
+  <section class="cartao" aria-labelledby="t-transf">
+    <h2 id="t-transf">Transferência bancária</h2>
+    <div class="dado"><small>Titular</small><strong>Associação Makários (YAH Church Porto)</strong></div>
+    <div class="dado"><small>IBAN</small><strong class="iban">PT50 0007 0000 0059 4867 6332 3</strong></div>
+    <div class="dado"><small>Banco</small><strong>Novo Banco</strong></div>
+    <button class="copiar" type="button" data-copiar="PT50000700000059486763323">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>
+      <span>Copiar IBAN</span>
+    </button>
+    <ol class="passos">
+      <li>Abra a app do seu banco e escolha transferência.</li>
+      <li>Cole o IBAN e indique o valor.</li>
+      <li>Na descrição, se quiser, escreva DÍZIMO ou OFERTA.</li>
+    </ol>
+  </section>
+
+  <p class="nota">Dúvidas? <a href="https://wa.me/5511947267376" target="_blank" rel="noopener">Mande uma mensagem pelo WhatsApp</a>.</p>
+
+  <footer>
+    <span>Igreja Batista <span class="sep">·</span> @yahchurch.porto</span>
+    <span>R. Ló Ferreira 255, 4450-177 Matosinhos</span>
+  </footer>
+</main>
+<script>
+document.querySelectorAll('[data-copiar]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var txt = b.getAttribute('data-copiar'), rot = b.querySelector('span'), orig = rot.textContent;
+    function ok() { b.classList.add('ok'); rot.textContent = 'Copiado!'; setTimeout(function () { b.classList.remove('ok'); rot.textContent = orig; }, 1800); }
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(txt).then(ok, velho); } else { velho(); }
+    function velho() { var t = document.createElement('textarea'); t.value = txt; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+      document.body.appendChild(t); t.select(); try { document.execCommand('copy'); ok(); } catch (e) {} document.body.removeChild(t); }
+  });
+});
+</script>
+</body>
+</html>
